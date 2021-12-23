@@ -1,6 +1,5 @@
 import java.lang.reflect.UndeclaredThrowableException; //Cung cấp các lớp và giao diện để lấy thông tin phản chiếu về các lớp và đối tượng -> Ngoại lệ có thể tạo ra không được khai báo
 import java.security.GeneralSecurityException; //Cung cấp các lớp và giao diện cho khung bảo mật.
-import java.security.DrbgParameters.NextBytes;
 // Lớp GeneralSecurityException là một lớp ngoại lệ bảo mật chung cung cấp an toàn kiểu cho tất cả các lớp ngoại lệ liên quan đến bảo mật mở rộng từ nó.
 import java.text.DateFormat;//DateFormat là một lớp trừu tượng dành cho các lớp con định dạng ngày / giờ để định dạng và phân tích cú pháp ngày hoặc giờ theo cách độc lập với ngôn ngữ.
 import java.text.SimpleDateFormat;//SimpleDateFormat là một lớp cụ thể để định dạng và phân tích cú pháp ngày tháng theo cách nhạy cảm với ngôn ngữ.
@@ -9,11 +8,7 @@ import javax.crypto.Mac;//Lớp này cung cấp chức năng của thuật toán
 import javax.crypto.spec.SecretKeySpec;//Một khóa bí mật (đối xứng).
 import java.math.BigInteger;//BigInteger tương tự như kiểu dữ liệu nguyên thuỷ int, long nhưng cho phép lưu trữ giá trị kiểu số nguyên cực lớn, lớn hơn rất nhiều so với giá trị cực đại của int và long cho phép.
 import java.util.TimeZone;//TimeZone thể hiện sự chênh lệch múi giờ và cũng tính toán mức tiết kiệm ánh sáng ban ngày.
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.LocalDateTime;
-import java.time.Month;
-import java.util.Scanner;
+
 // Thuận toán TOTP
 
 public class DeTotp {
@@ -214,9 +209,9 @@ public class DeTotp {
                                 "31323334";
 
                 long T0 = 0;
-                long X = 30;
+                long X = 30000;
                 Date date = new Date();
-                long testTime = date.getTime() / 5000;
+                long testTime = date.getTime();
 
                 String steps = "0";
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
